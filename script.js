@@ -33,13 +33,6 @@ let tries = 0;
 
 createList();
 
-function fixedBackground() {
-  document.body.style.backgroundRepeat = "no-repeat";
-  document.body.style.backgroundPosition = "center";
-  document.body.style.backgroundAttachment = "fixed";
-  document.body.style.backgroundSize = "cover";
-}
-
 //Insert List Items into DOM
 function createList() {
   //Capturing the header
@@ -48,7 +41,6 @@ function createList() {
   //Changing the header and body background depending on the quiz
   header.innerHTML = topics[chosenQuiz].header;
   document.body.style.backgroundImage = topics[chosenQuiz].img;
-  fixedBackground(); //Prevent picture duplication
 
   /*Clears any previous content within the HTML element with the ID "draggable-list." 
   This is done to prepare for the creation of a new list. */
@@ -94,18 +86,31 @@ function dragStart() {
   // console.log(dragStartIndex); //Check
 }
 
-//to manage visual feedback during the drag operation
-// function dragEnter() {
-//   console.log("Event: ", "dragenter"); //check
-//   this.classList.add("over"); //this refers to the current list item element
-// }
+//check layer we are in
+//https://www.geeksforgeeks.org/how-to-dragleave-fired-when-hovering-a-child-element-in-html-5/
+var counter = 0;
 
 function dragLeave() {
   console.log("Event: ", "dragleave"); //check
-  this.classList.remove("over"); //Removes CSS background color
+  //we leave the deeper layer
+  counter--;
+  console.log(counter);
+  //if we are in the outermost layer
+  if (counter == 0) {
+    this.classList.remove("over"); //Removes CSS background color
+  }
 }
 function dragOver(e) {
   console.log("Event: ", "dragover"); //check
+  e.preventDefault();
+}
+
+function dragEnter(e) {
+  console.log("Event: ", "dragenter"); //check
+  console.log(counter);
+  //we enter deeper layer
+  counter++;
+
   this.classList.add("over");
   e.preventDefault();
 }
@@ -116,6 +121,7 @@ function dragDrop() {
   const dragEndIndex = +this.getAttribute("data-index"); //this refers to the current list item element
   swapItems(dragStartIndex, dragEndIndex);
   this.classList.remove("over");
+  counter = 0;
 }
 
 function addEventListeners() {
@@ -128,18 +134,16 @@ function addEventListeners() {
 
   dragListItems.forEach((item) => {
     item.addEventListener("dragover", dragOver);
+    item.addEventListener("dragenter", dragEnter);
     item.addEventListener("drop", dragDrop);
-    // item.addEventListener("dragenter", dragEnter);
     item.addEventListener("dragleave", dragLeave);
   });
 }
 
 //swap the positions of two items in the listItems array
 function swapItems(fromIndex, toIndex) {
-  // console.log("swap"); //Check
   const itemOne = listItems[fromIndex].querySelector(".draggable");
   const itemTwo = listItems[toIndex].querySelector(".draggable");
-  //console.log(itemOne, itemTwo); //Check
 
   listItems[fromIndex].querySelector(".container-li").appendChild(itemTwo);
   listItems[toIndex].querySelector(".container-li").appendChild(itemOne);
