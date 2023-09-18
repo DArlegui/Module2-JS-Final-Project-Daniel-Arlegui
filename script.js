@@ -15,7 +15,7 @@ const topics = [
   },
   {
     list: ["Elon Musk", "Jeff Bezos", "Bill Gates", "Mark Zuckerberg", "Warren Buffett"],
-    header: "Top 5 Richest People in he World (2023 Q1)",
+    header: "Top 5 Richest People in the World (2023 Q1)",
     img: 'url("img/money.jpg")',
   },
   {
