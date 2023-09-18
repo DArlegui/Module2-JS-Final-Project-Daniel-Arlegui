@@ -93,9 +93,9 @@ body {
   background-color: #fff;
 }
 
-/* .draggable-list li.over .draggable {
-  background-color: hsl(0, 0%, 0%);
-} */
+.draggable-list li.over .draggable {
+  background-color: hsl(0, 0%, 92%);
+}
 
 .draggable-list li.right .number {
   background-color: #3ae374;
