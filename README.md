@@ -1,21 +1,10 @@
 # Sorting Game (Module 2 JS Final Project)
 
-[Live Demo](https://darlegui-sortable-list-game.netlify.app/)
+[Live Demo](https://darlegui-sortable-list-game.netlify.app/) | [Figma Design](https://www.figma.com/file/H7V0UlRBqWKc5mrjMNpi9Z/Drag-%26-Drop-Sort-Project?type=design&node-id=0%3A1&mode=design&t=95RYS6UInCyEk6AP-1)
 
 ## Overview
 
-- **Project Name:** Sorting Game
-- **Author:** Daniel Arlegui
-- **Description:** A fun interactive sorting game that challenges your ability to arrange items in the correct order by dragging and dropping.
-
-## Project Structure
-
-The project consists of the following files:
-
-- **index.html:** The main HTML file that defines the structure of the game interface.
-- **style.css:** The CSS file that provides styling for the game interface.
-- **script.js:** The JavaScript file containing the game logic, including drag and drop functionality.
-- **img folder:** Contains images used in the game (you can add more images as needed).
+A fun interactive sorting game that challenges your ability to arrange items in the correct order by dragging and dropping.
 
 ## How to Play
 
@@ -26,11 +15,3 @@ The project consists of the following files:
 5. If your order is correct, you'll receive a message indicating the number of tries it took to solve the challenge.
 6. You can proceed to the next challenge by clicking the "Next" button.
 7. The game will continue with new challenges until you have completed them all.
-
-## Technologies Used
-
-- Figma [Design Link Here](https://www.figma.com/file/H7V0UlRBqWKc5mrjMNpi9Z/Drag-%26-Drop-Sort-Project?type=design&node-id=0%3A1&mode=design&t=95RYS6UInCyEk6AP-1)
-- HTML5
-- CSS3
-- JavaScript
-- Font Awesome icons
