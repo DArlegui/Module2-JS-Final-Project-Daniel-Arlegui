@@ -29,12 +29,6 @@ The project consists of the following files:
 
 ## Technologies Used
 
-<<<<<<< HEAD
-
-=======
-
-> > > > > > > 8a6ccbe508f072aa3bfc87dc1b7bef55c56f5b31
-
 - Figma [Design Link Here](https://www.figma.com/file/H7V0UlRBqWKc5mrjMNpi9Z/Drag-%26-Drop-Sort-Project?type=design&node-id=0%3A1&mode=design&t=95RYS6UInCyEk6AP-1)
 - HTML5
 - CSS3
